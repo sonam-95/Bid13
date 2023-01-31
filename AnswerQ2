@@ -12,3 +12,65 @@ As there is no data in row A for the matching inputs, the output will be null.
 
 Q2 c) What is the upper limit of this mapping function before there will be collisions? 
 Upper limit will be 79791 in case the size of int is 2 bytes the value can only range upto 65535, it need to be defined as Long.
+
+/* Online C Compiler and Editor */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct map {
+  int key;
+  char container[30];
+  struct map *next;
+};
+    
+struct map * head = NULL;
+void push(struct map * head, int val,const char *str) {
+    struct map * current = head;
+     if( current->next == NULL)
+    {
+     head = current;
+    }
+    else{
+      while (current->next != NULL) {
+          current = current->next;
+      }
+     }
+
+      current->next = (struct map *) malloc(sizeof(struct map));
+      current->next->key = val;
+      strcpy(current->next->container, str);
+      current->next->next = NULL;
+}
+
+void print_upper_limit(struct map *head) 
+{
+    struct map *current = head;
+    while (current != NULL) 
+    {
+        current = current->next;
+    }
+    printf("%d\n", current->key);
+}
+
+int main()
+{
+    int rows, key=0;
+    char *str =NULL;
+printf("enter no of rows \n");
+        scanf("%d",&rows);
+        
+    for(int i=0;i<rows;i++)
+    {
+        printf("enter key \n");
+        scanf("%d",&key);
+        printf("enter value \n");
+        scanf("%s",str);
+        push(head, key,str);
+    }
+    print_upper_limit(head);
+    
+        
+}
+
+
