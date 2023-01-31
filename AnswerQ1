@@ -1,0 +1,35 @@
+/* Online C Compiler and Editor */
+#include <stdio.h>
+
+int main()
+{
+    int temp,large,small;
+    static int rem=0;
+    
+    printf("enter sides \n");
+    scanf("%d %d",&large, &small);
+    printf("Sides enter is %d * %d \n", large,small);
+    if(small>large) //swap
+        {
+            temp = large;
+            large = small;
+            small = temp;
+        }
+    
+    while(large>1)
+    {
+        if(small>large) //swap
+        {
+            temp = large;
+            large = small;
+            small = temp;
+        }
+        printf("square %d = %d * %d \n", ++rem, small, small);
+        large=large-small;
+    }
+    for(;small>0;small--)
+    {
+        printf("square %d = %d * %d \n", ++rem, large, large);
+    }
+    return 0;
+}
