@@ -1,1 +1,14 @@
+What is the mapping function?
+Mapping shows how the elements are in relation in which each other. We can create a structure or an array(if similar datatype) to store the mapped variables,
+so that they are easy to refer.
+Example: 
+struct map {
+  int key;
+  char container[30];
+};
+
+Q2 b) What is the output of the mapping function for the following inputs: 30001, 55555, 77788
+As there is no data in row A for the matching inputs, the output will be null.
+
+
 
