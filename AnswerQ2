@@ -10,5 +10,5 @@ struct map {
 Q2 b) What is the output of the mapping function for the following inputs: 30001, 55555, 77788
 As there is no data in row A for the matching inputs, the output will be null.
 
-
-
+Q2 c) What is the upper limit of this mapping function before there will be collisions? 
+Upper limit will be 79791 in case the size of int is 2 bytes the value can only range upto 65535, it need to be defined as Long.
